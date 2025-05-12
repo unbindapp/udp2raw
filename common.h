@@ -77,6 +77,7 @@ typedef int socklen_t;
 #include <sys/ioctl.h>
 #include <arpa/inet.h>
 #include <netinet/in.h>
+#include <netdb.h>
 #endif
 
 #include <unordered_map>
@@ -221,9 +222,9 @@ struct address_t  // TODO scope id
         return 0;
     }
 
-    int from_str(char *str);
+    int from_str(std::string str);
 
-    int from_str_ip_only(char *str);
+    int from_str_ip_only(std::string str);
 
     int from_sockaddr(sockaddr *, socklen_t);
 
